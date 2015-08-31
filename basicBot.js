@@ -313,7 +313,7 @@
             }
         },
         room: {
-            name: YourturnGamings PlugDj Room,
+            name: "YourturnGamings PlugDj Room",
             chatMessages: [],
             users: [],
             afkList: [],

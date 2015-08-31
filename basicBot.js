@@ -270,7 +270,7 @@
             maximumLocktime: 10,
             cycleGuard: true,
             maximumCycletime: 10,
-            voteSkip: true
+            voteSkip: true,
             voteSkipLimit: 5,
             historySkip: true,
             timeGuard: true,

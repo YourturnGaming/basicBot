@@ -236,10 +236,10 @@
     var botCreatorIDs = ["3851534", "4105209", "3594631"];
 
     var basicBot = {
-        version: "2.8.13",
+        version: "0.0.01",
         status: true,
         name: "Yourturn's Bot",
-        loggedInID: null,
+        loggedInID: "3696483",
         scriptLink: "https://rawgit.com/Yemasthui/basicBot/master/basicBot.js",
         cmdLink: "http://git.io/245Ppg",
         chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
@@ -248,7 +248,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "basicBot",
+            botName: "Yourturn's Bot",
             language: "english",
             chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
             scriptLink: "https://rawgit.com/Yemasthui/basicBot/master/basicBot.js",
@@ -270,7 +270,7 @@
             maximumLocktime: 10,
             cycleGuard: true,
             maximumCycletime: 10,
-            voteSkip: true,
+            voteSkip: true
             voteSkipLimit: 5,
             historySkip: true,
             timeGuard: true,
@@ -290,18 +290,18 @@
             ],
             afkpositionCheck: 15,
             afkRankCheck: "ambassador",
-            motdEnabled: false,
-            motdInterval: 5,
-            motd: "Temporary Message of the Day",
+            motdEnabled: True,
+            motdInterval: 60,
+            motd: "Type !help to get some help :P",
             filterChat: true,
-            etaRestriction: false,
+            etaRestriction: true,
             welcome: true,
             opLink: null,
             rulesLink: null,
             themeLink: null,
             fbLink: null,
-            youtubeLink: null,
-            website: null,
+            youtubeLink: www.youtube.com/user/yourturngaming1,
+            website: www.yourturngaming.com,
             intervalMessages: [],
             messageInterval: 5,
             songstats: true,
@@ -313,7 +313,7 @@
             }
         },
         room: {
-            name: null,
+            name: YourturnGaming's PlugDj Room,
             chatMessages: [],
             users: [],
             afkList: [],
@@ -1288,7 +1288,7 @@
                 'gringo', 'fuder', 'foder', 'hua', 'ahue', 'modafuka', 'modafoka', 'mudafuka', 'mudafoka', 'ooooooooooooooo', 'foda'
             ],
             curses: [
-                'nigger', 'faggot', 'nigga', 'niqqa', 'motherfucker', 'modafocka'
+                'nigger', 'faggot', 'nigga', 'niqqa', 'motherfucker', 'modafocka', 'bitch', 'whore'
             ]
         },
         connectAPI: function () {
@@ -1893,7 +1893,18 @@
                     }
                 }
             },
-
+			commandCommand: {
+                command: 'command',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(subChat(basicBot.chat.commandslink, {botname: basicBot.settings.botName, link: basicBot.cmdLink}));
+                    }
+                }
+            },
             cmddeletionCommand: {
                 command: ['commanddeletion', 'cmddeletion', 'cmddel'],
                 rank: 'mod',
@@ -1913,7 +1924,10 @@
                     }
                 }
             },
-
+			/*
+			
+			// Might Change Cookies into something else - Disable
+			
             cookieCommand: {
                 command: 'cookie',
                 rank: 'user',
@@ -1949,7 +1963,8 @@
                     }
                 }
             },
-
+			*/
+			
             cycleCommand: {
                 command: 'cycle',
                 rank: 'manager',
@@ -2180,7 +2195,10 @@
                     }
                 }
             },
-
+			/*
+			
+			// Don't have a Facebook - Disable This command
+			
             fbCommand: {
                 command: 'fb',
                 rank: 'user',
@@ -2194,7 +2212,7 @@
                     }
                 }
             },
-
+			*/
             filterCommand: {
                 command: 'filter',
                 rank: 'bouncer',
@@ -2256,7 +2274,9 @@
                     }
                 }
             },
-
+			/*
+			
+			//Disable this command going to use it for spamming memes 
             gifCommand: {
                 command: ['gif', 'giphy'],
                 rank: 'user',
@@ -2325,7 +2345,7 @@
                     }
                 }
             },
-
+			*/
             helpCommand: {
                 command: 'help',
                 rank: 'user',
@@ -2334,7 +2354,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        var link = "(Updated link coming soon)";
+                        var link = "(Please use the !commands or !command to look at the list of commands)";
                         API.sendChat(subChat(basicBot.chat.starterhelp, {link: link}));
                     }
                 }
@@ -2677,7 +2697,7 @@
 
             logoutCommand: {
                 command: 'logout',
-                rank: 'manager',
+                rank: 'host',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);

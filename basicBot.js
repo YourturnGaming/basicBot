@@ -290,7 +290,7 @@
             ],
             afkpositionCheck: 15,
             afkRankCheck: "ambassador",
-            motdEnabled: True,
+            motdEnabled: true,
             motdInterval: 60,
             motd: "Type !help to get some help :P",
             filterChat: true,

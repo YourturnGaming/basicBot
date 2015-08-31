@@ -233,7 +233,7 @@
 
     var botCreator = "Yemasthui";
     var botMaintainer = "YourturnGaming"
-    var botCreatorIDs = ["3851534", "4105209". "3594631"];
+    var botCreatorIDs = ["3851534", "4105209", "3594631"];
 
     var basicBot = {
         version: "2.8.13",

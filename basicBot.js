@@ -231,14 +231,14 @@
         return str;
     };
 
-    var botCreator = "Matthew (Yemasthui)";
-    var botMaintainer = "Benzi"
-    var botCreatorIDs = ["3851534", "4105209"];
+    var botCreator = "Yemasthui";
+    var botMaintainer = "YourturnGaming"
+    var botCreatorIDs = ["3851534", "4105209". "3594631"];
 
     var basicBot = {
         version: "2.8.13",
-        status: false,
-        name: "basicBot",
+        status: true,
+        name: "Yourturn's Bot",
         loggedInID: null,
         scriptLink: "https://rawgit.com/Yemasthui/basicBot/master/basicBot.js",
         cmdLink: "http://git.io/245Ppg",
@@ -255,12 +255,12 @@
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
-            startupEmoji: false, // true or false
+            startupEmoji: true, // true or false
             autowoot: true,
             autoskip: false,
             smartSkip: true,
-            cmdDeletion: true,
-            maximumAfk: 120,
+            cmdDeletion: false,
+            maximumAfk: 300,
             afkRemoval: true,
             maximumDc: 60,
             bouncerPlus: true,
@@ -270,13 +270,13 @@
             maximumLocktime: 10,
             cycleGuard: true,
             maximumCycletime: 10,
-            voteSkip: false,
-            voteSkipLimit: 10,
-            historySkip: false,
+            voteSkip: true
+            voteSkipLimit: 5,
+            historySkip: true,
             timeGuard: true,
-            maximumSongLength: 10,
+            maximumSongLength: 9,
             autodisable: true,
-            commandCooldown: 30,
+            commandCooldown: 15,
             usercommandsEnabled: true,
             skipPosition: 3,
             skipReasons: [
